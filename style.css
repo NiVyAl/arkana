@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Arial";
+}
+
+.clearfix {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0px 15px;
+}
+
+
+
+/* header */
+
+header {
+    padding-top: 2% !important;
+}
+
+header img {
+    vertical-align: middle
+}
+
+header ul {
+    padding-left: 0;
+    list-style: none;
+    margin: 0;
+}
+
+
+/* main-header */
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #d4d4d4;
+}
+
+.main-header ul {
+    display: flex;
+}
+
+.main-header button {
+    /font-size: 0;
+    border: 0px;
+    background-color: transparent;
+    font-size: 0;
+    width: 30px;
+    height: 30px;
+        border: 1px solid red;
+    
+}
+
+.main-header ul:first-child li {
+    margin-right: 20px;
+}
+
+.main-header ul:last-child li {
+    margin-left: 20px;
+}
+
+/* */
+
+
+/* header categories */
+
+.header-categories {
+    padding-top: 30px;
+}
+
+.header-categories ul {
+    display: flex;
+    justify-content: center;
+}
+
+.header-categories li {
+    margin-right: 80px;
+}
+
+.header-categories li:last-child {
+    margin-right: 0;
+}
+
+.header-categories a {
+    color: #161918;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.header-categories a:hover{
+    text-decoration: underline;
+}
+
+/* */
+
+
+/* </header> */
