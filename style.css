@@ -21,6 +21,10 @@ body {
     top: -20px;
     right: -30px;
     font-size: 15px;
+} 
+
+.title-js::after {
+    content: "";
 }
 
 div {
