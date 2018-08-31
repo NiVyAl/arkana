@@ -4,10 +4,27 @@ body {
     font-family: "Arial";
 }
 
-.clearfix {
+.wrapper {
     max-width: 1140px;
     margin: 0 auto;
     padding: 0px 15px;
+}
+
+.title-js {
+    background-color: green;
+    display: inline-block;
+    color: white;
+    width: 40px;
+    height: 20px;
+    text-align: center;
+    position: absolute;
+    top: -20px;
+    right: -30px;
+    font-size: 15px;
+}
+
+div {
+    position: relative;
 }
 
 
@@ -38,19 +55,8 @@ header ul {
     border-bottom: 1px solid #d4d4d4;
 }
 
-.main-header ul {
-    display: flex;
-}
-
-.main-header button {
-    /font-size: 0;
-    border: 0px;
-    background-color: transparent;
-    font-size: 0;
-    width: 30px;
-    height: 30px;
-        border: 1px solid red;
-    
+.main-header li {
+    display: inline-block;
 }
 
 .main-header ul:first-child li {
@@ -60,6 +66,91 @@ header ul {
 .main-header ul:last-child li {
     margin-left: 20px;
 }
+
+
+.main-header button {
+    /font-size: 0;
+    border: 0px;
+    background-color: transparent;
+    font-size: 0;
+    width: 30px;
+    height: 30px;
+        outline: 1px solid red;
+    position: relative;
+    cursor: pointer;
+    
+    padding: 0;
+}
+
+.icon {
+    display: inline-block;
+    position: relative;
+}
+
+.icon::before, .icon::after {
+    content: "";
+    display: block;
+    background-color: #161918;
+    
+}
+
+.menu .icon {
+    width: 100%;
+    height: 2px;
+    background-color: #161918;
+}
+
+
+.menu .icon::before, .menu .icon::after {
+    width: 30px;
+    height: 2px;
+    position: absolute;    
+} 
+
+.menu .icon::before {
+    top: 7px;
+}
+
+.menu .icon::after {
+    bottom: 7px;       
+    
+}
+
+
+.search .icon {
+    width: 15px;
+    height: 15px;
+    border: 2px solid #161918;
+    border-radius: 50%;  
+}
+
+.search .icon::after {
+    width: 10px;
+    height: 2px;
+    position: absolute;
+    bottom: -3px;
+    right: -5px;
+    transform: rotate(45deg);
+}
+
+
+.share .icon {
+    width: 5px;
+    height: 5px;
+    background-color: #161918;
+    border-radius: 50%;
+    display: block;
+    /position: absolute;
+    /right: 5px;
+    
+    margin: 5px;
+}
+
+.share .icon:first-child {
+    /top: 5px;
+}
+
+
 
 /* */
 
@@ -97,3 +188,20 @@ header ul {
 
 
 /* </header> */
+
+header {
+    outline: 1px solid red;
+}
+
+.experiment {
+    width: 100px;
+    height: 30px;
+}
+
+.experiment div {
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    margin-bottom: 10px;
+}
