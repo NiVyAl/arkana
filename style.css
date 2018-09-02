@@ -40,7 +40,8 @@ header {
 }
 
 header img {
-    vertical-align: middle
+    /vertical-align: middle;
+        outline: 1px solid blue;
 }
 
 header ul {
@@ -55,8 +56,10 @@ header ul {
 .main-header {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 30px;
+    align-items: center;
+    padding-bottom: 32px;
     border-bottom: 1px solid #d4d4d4;
+        outline: 1px solid green;
 }
 
 .main-header li {
@@ -71,9 +74,14 @@ header ul {
     margin-left: 20px;
 }
 
+.main-header ul {
+    outline: 1px solid blue;
+    
+    font-size: 0; /* чтоб избавиться от отступов */
+}
+
 
 .main-header button {
-    /font-size: 0;
     border: 0px;
     background-color: transparent;
     font-size: 0;
@@ -84,7 +92,17 @@ header ul {
     cursor: pointer;
     
     padding: 0;
+    
+    vertical-align: middle; /* для выравнивания (фикс бага на версии 1.2) */
 }
+
+/*
+.test {
+    display: inline-block;
+    width: 10px;
+    height: 40px;
+    background-color: black;
+} */
 
 .icon {
     display: inline-block;
@@ -99,59 +117,109 @@ header ul {
 }
 
 .menu .icon {
-    width: 100%;
+    width: 18px;
     height: 2px;
     background-color: #161918;
 }
 
 
 .menu .icon::before, .menu .icon::after {
-    width: 30px;
+    width: 18px;
     height: 2px;
     position: absolute;    
 } 
 
 .menu .icon::before {
-    top: 7px;
+    top: 5px;
 }
 
 .menu .icon::after {
-    bottom: 7px;       
+    bottom: 5px;       
     
 }
 
 
-.search .icon {
-    width: 15px;
-    height: 15px;
+.search .icon::before {
+    width: 13px;
+    height: 13px;
     border: 2px solid #161918;
     border-radius: 50%;  
+    background-color: transparent;
+    box-sizing: border-box;
 }
 
 .search .icon::after {
-    width: 10px;
+    width: 7px;
     height: 2px;
-    position: absolute;
-    bottom: -3px;
-    right: -5px;
+    position: relative; /* чтоб лупа была в центре кнопки, ножка не должна выпадать */
+    left: 10px;
     transform: rotate(45deg);
 }
 
-
-.share .icon {
+.share .icon, .share .icon:first-child::after {
     width: 5px;
     height: 5px;
     background-color: #161918;
     border-radius: 50%;
     display: block;
-    /position: absolute;
-    /right: 5px;
     
-    margin: 5px;
+    margin-left: 18px; /* отцентровал примерно */
 }
 
 .share .icon:first-child {
-    /top: 5px;
+    margin-bottom: 7px;
+}
+
+.share .icon::before {
+    width: 10px;
+    height: 2px;
+    background-color: #161918;
+    position: absolute;
+    left: -9px;
+    
+    top: 50%;
+    margin-top: -1px;
+}
+
+
+.share .icon:first-child::before {
+    transform: translateY(3.5px) rotate(-30deg);
+}
+
+.share .icon:last-child::before {
+    transform: translateY(-3.5px) rotate(30deg);
+}
+
+.share .icon:first-child::after {
+    position: absolute;
+    top: 5.9px;
+    right: 12px;
+    
+}
+
+.basket .icon {
+    width: 16px;
+    height: 11px;
+    border: 2px solid #161918;
+}
+
+.basket .icon::after {
+    width: 16px;
+    height: 4px;
+    background-color: inherit;
+    border-bottom: 3px solid #161918;
+    position: absolute;
+    top: 2px;
+}
+
+.basket .icon::before {
+    width: 6px;
+    height: 6px;
+    background-color: transparent;
+    border: 2px solid red;
+    border-bottom-color: transparent;
+    margin: 0 auto;
+    margin-top: -6px;
 }
 
 
@@ -162,7 +230,7 @@ header ul {
 /* header categories */
 
 .header-categories {
-    padding-top: 30px;
+    padding-top: 25px;
 }
 
 .header-categories ul {
@@ -192,20 +260,3 @@ header ul {
 
 
 /* </header> */
-
-header {
-    outline: 1px solid red;
-}
-
-.experiment {
-    width: 100px;
-    height: 30px;
-}
-
-.experiment div {
-    display: block;
-    width: 10px;
-    height: 10px;
-    background-color: black;
-    margin-bottom: 10px;
-}
