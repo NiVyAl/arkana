@@ -15,7 +15,7 @@ body {
 }
 
 .none {
-    display: none;
+    display: none !important;
 }
 
 main h2 {
@@ -64,6 +64,8 @@ main h2::after {
     cursor: pointer;
     display: inline-block;
     word-spacing: 0px;
+    
+    box-sizing: border-box;
 }
 
 
@@ -509,9 +511,10 @@ main {  /* временно */
 .products li {
     border: 1px solid red;
     text-align: center;
-    
     margin: 15px;
     word-spacing: 0px;
+    
+    cursor: pointer;
 }
 
 .products .price {
@@ -524,6 +527,7 @@ main {  /* временно */
     margin-left: 10px;
     text-decoration: line-through;
 }
+
 
 .filter-button {
     width: 135px;
@@ -589,6 +593,105 @@ main {  /* временно */
     content: "New";
 }
 
+
+.choose-color {
+    display: none;
+}
+
+.choose-color label {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+label[for="color-1"] {
+    background-color: #efacac;
+}
+
+label[for="color-2"] {
+    background-color: #edd9a2;
+}
+
+label[for="color-3"] {
+    background-color: #b0dfb8;
+}
+
+label[for="color-4"] {
+    background-color: #b7cdd4;
+}
+
+#color-1:checked ~ .choose-color label[for="color-1"],
+#color-2:checked ~ .choose-color label[for="color-2"],
+#color-3:checked ~ .choose-color label[for="color-3"],
+#color-4:checked ~ .choose-color label[for="color-4"] {
+    border: 1px solid black;
+    width: 24px;
+    height: 24px;
+}
+
+.products .button {
+    position: absolute;
+    bottom: 15px;
+    width: 153px;
+    height: 49px;
+    padding: 0;
+    line-height: 49px;
+    
+    display: none;
+}
+
+.products .button:nth-child(3) {
+    left: 15px;
+}
+
+.products .button:nth-child(4) {
+    right: 15px;
+    background-color: white;
+    color: black;
+}
+
+.main-image {
+    display: block;
+}
+
+.hover-image {
+    display: none;
+}
+
+.products li:hover .main-image{
+    display: none;
+}
+
+.products li:hover .hover-image{
+    display: block;
+}
+
+
+.products li:hover .price{
+    display: none;
+}
+
+.products li:hover .choose-color{
+    display: block;
+}
+
+.products li:hover .img-container .button{
+    display: inline-block;
+}
+
+.products li:hover .img-container::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.2;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+}
+
 /* */
 
 
@@ -649,6 +752,12 @@ main {  /* временно */
 }
 
 .brands a {
+    /border: 1px solid red;
+    display: flex;
+    align-items: center;
+}
+
+.brands img {
     display: inline-block;
-    border: 1px solid green;
+    /border: 1px solid green;
 }
