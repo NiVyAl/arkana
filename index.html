@@ -7,6 +7,7 @@
     </head>
     
     <body>
+        <style></style>
         <header>
             <div class="wrapper">
                 <div class="main-header">
@@ -110,36 +111,37 @@
             <section class="trending-products">
                 <h2>Top Trending</h2>
                 <p class="product-title-text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <button class="button filter-button filter-active">New products</button>
+                
+                <button class="button filter-button filter-active" onclick="filterNew()">New products</button>
                 <button class="button filter-button">Price drop</button>
                 <button class="button filter-button">Best sales</button>
                 
                 <ul class="products">
-                    <li>
-                        <div class="img-container new">
+                    <li class="new discount" data-discount="20">
+                        <div class="img-container">
                             <img src="Pic.png">
                         </div>
                         <p class="product-title">Excepteur sint occaecat cupidatat</p>
-                        <p class="price">$199.00</p>
+                        <p class="price">$<span>199</span>.00</p>
                     </li>
                     
                     <li>
-                        <div class="img-container new discount">
+                        <div class="img-container">
                             <img src="Pic2.png">
                         </div>
                         <p class="product-title">Excepteur sint occaecat cupidatat</p>
-                        <p class="price">$199.00</p>
+                        <p class="price">$<span>149</span>.00</p>
                     </li>
                     
                     
-                    <li class="product-active">
+                    <li class="product-active discount" data-discount="10">
                         
                         <input type="radio" name="product-3" id="color-1" checked class="none">
                         <input type="radio" name="product-3" id="color-2" class="none">
                         <input type="radio" name="product-3" id="color-3" class="none">
                         <input type="radio" name="product-3" id="color-4" class="none">
                         
-                        <div class="img-container discount">
+                        <div class="img-container">
                             <img src="Pic.png" class="main-image">
                             
                             <img src="Pic-hover.png" class="hover-image">
@@ -147,7 +149,7 @@
                             <a href="#" class="button">More details</a>
                         </div>
                         <p class="product-title">Excepteur sint occaecat cupidatat</p>
-                        <p class="price">$199.00</p>
+                        <p class="price">$<span>199</span>.00</p>
                         
                         <div class="choose-color">
                             <label for="color-1"></label>
@@ -159,12 +161,12 @@
                     </li>
                     
                     
-                    <li>
-                        <div class="img-container new discount">
+                    <li class="new discount" data-discount="15">
+                        <div class="img-container">
                             <img src="Pic2.png">
                         </div>
                         <p class="product-title">Excepteur sint occaecat cupidatat</p>
-                        <p class="price">$199.00</p>
+                        <p class="price">$<span>299</span>.00</p>
                     </li>
                     
                     <li>
@@ -172,7 +174,7 @@
                             <img src="Pic3.png">
                         </div>
                         <p class="product-title">Excepteur sint occaecat cupidatat</p>
-                        <p class="price">$199.00</p>
+                        <p class="price">$<span>99</span>.00</p>
                     </li>
                     
                     <li>
@@ -180,7 +182,7 @@
                             <img src="Pic4.png">
                         </div>
                         <p class="product-title">Excepteur sint occaecat cupidatat</p>
-                        <p class="price">$199.00</p>
+                        <p class="price">$<span>199</span>.00</p>
                     </li>
                     
                     <li>
@@ -188,7 +190,7 @@
                             <img src="Pic2.png">
                         </div>
                         <p class="product-title">Excepteur sint occaecat cupidatat</p>
-                        <p class="price">$199.00</p>
+                        <p class="price">$<span>199</span>.00</p>
                     </li>
                     
                     <li>
@@ -196,7 +198,7 @@
                             <img src="Pic3.png">
                         </div>
                         <p class="product-title">Excepteur sint occaecat cupidatat</p>
-                        <p class="price">$199.00</p>
+                        <p class="price">$<span>199</span>.00</p>
                     </li>
                     
                     <li>
@@ -204,15 +206,15 @@
                             <img src="Pic4.png">
                         </div>
                         <p class="product-title">Excepteur sint occaecat cupidatat</p>
-                        <p class="price">$199.00</p>
+                        <p class="price">$<span>199</span>.00</p>
                     </li>
                     
-                    <li>
-                        <div class="img-container">
+                    <li class="discount" data-discount="30">
+                        <div class="img-container discount">
                             <img src="Pic5.png">
                         </div>
                         <p class="product-title">Excepteur sint occaecat cupidatat</p>
-                        <p class="price">$199.00</p>
+                        <p class="price">$<span>199</span>.00</p>
                     </li>
                 </ul>
                 

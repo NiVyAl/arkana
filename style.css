@@ -521,7 +521,7 @@ main {  /* временно */
     color: #929292;   
 }
 
-.products li:nth-child(2) .price::after {
+.price-discount::after {
     content: "$229.00";
     font-size: 13px;
     margin-left: 10px;
@@ -585,11 +585,11 @@ main {  /* временно */
     left: 15px
 }
 
-.products .discount::after {
+.discount .img-container::after {
     content: "-20%";
 }
 
-.products .new::before {
+.new .img-container::before {
     content: "New";
 }
 
