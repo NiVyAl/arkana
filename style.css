@@ -522,7 +522,7 @@ main {  /* временно */
 }
 
 .price-discount::after {
-    content: "$229.00";
+    /content: "$229.00";
     font-size: 13px;
     margin-left: 10px;
     text-decoration: line-through;

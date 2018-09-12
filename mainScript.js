@@ -12,12 +12,13 @@ basketChangeColor.style.boxShadow = 'inset 0px -2px ' + bodyColor + ', inset 0px
 
 */
 
-var style = document.querySelectorAll('style');
+var styleContainer = document.querySelector('.style-container');
 
 var allPriceContainer = document.querySelectorAll('.price');
 var allPrice = document.querySelectorAll('.price span');
 var allProducts = document.querySelectorAll('.products li');
 //var imageContainer = document.querySelectorAll('.img-container');
+var styleText = '<style type="text/css">';
 
 for (var i=0; i < allPrice.length; i++){
     if (allProducts[i].classList.contains('discount')) {
@@ -25,11 +26,14 @@ for (var i=0; i < allPrice.length; i++){
     };
     var discount = allProducts[i].dataset.discount;
     if (discount) {
-        console.log(discount);
+        //console.log(discount);
         var lastPrice = allPrice[i].innerHTML / ((100-discount)/100);
-        console.log(lastPrice);
+        console.log(i + ' discount ' + discount);
+        allPriceContainer[i].classList.add('last-price-' + i);
         
-        allPrice[i].classList.add('last-price-' + i);
-        style.innerHTML = '.last-price-' + i + '{content: "$' + lastPrice + '" !important;}';
+        styleText = styleText + ' .last-price-' + i + '::after {content: "$' + Math.round(lastPrice) + '" !important;}';
     }
 }
+
+styleText = styleText + '</style>';
+styleContainer.innerHTML = styleText;
