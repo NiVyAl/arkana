@@ -37,3 +37,38 @@ for (var i=0; i < allPrice.length; i++){
 
 styleText = styleText + '</style>';
 styleContainer.innerHTML = styleText;
+
+
+var productsContainer = document.querySelector('.products');
+var filterButtons = document.querySelectorAll('.filter-button');
+//console.log(filterButtons);
+
+var filter = function(type) {
+    for (var i = 0; i < filterButtons.length; i++) {
+        filterButtons[i].classList.remove('filter-active');
+    };
+    
+    if (type == "best") {
+        filterButtons[0].classList.add('filter-active');
+    }
+    
+    if (type == "new") {
+        for (var i = allProducts.length-1; i > -1; i--) {
+
+            if (allProducts[i].classList.contains('new')) {
+                productsContainer.insertBefore(allProducts[i], productsContainer.firstChild);
+            }
+        }
+        filterButtons[1].classList.add('filter-active');
+    };
+    
+    if (type == "price") {
+        for (var i = 0; i < allProducts.length; i++) {
+            
+            if (allProducts[i].dataset.discount) {
+                productsContainer.insertBefore(allProducts[i], productsContainer.firstChild);
+            }
+        }
+        filterButtons[2].classList.add('filter-active');    
+    }
+}
